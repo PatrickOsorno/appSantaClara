@@ -1,0 +1,79 @@
+<nav class="navbar bg-primary navbar-expand-lg text-white">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            [routerLink]="['/']"
+            routerLinkActive="router-link-active"
+          >
+            <i class="fa-solid fa-house"></i> Inicio</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link active text-white dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-file"></i> Tr&aacute;mites</a
+          >
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" [routerLink]="['/formularios']"
+                > <i class="fa-regular fa-paste"></i> Formularios</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link active text-white dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-hand-holding-dollar"></i> Servicios
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" [routerLink]="['/consulta-recibos']"
+                >
+                <i class="fa-solid fa-money-check-dollar"></i> Consulta de Recibos</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" [routerLink]="['/galeria']"
+            ><i class="fa-solid fa-camera"></i> Galer&iacute;a</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active text-white" [routerLink]="['/contactenos']">
+            <i class="fa-solid fa-envelope"></i> Cont&aacute;ctenos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" [routerLink]="['/historia']">
+            <i class="fa-solid fa-scroll"></i> Historia</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
