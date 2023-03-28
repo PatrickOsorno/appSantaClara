@@ -16,6 +16,9 @@
             "outputPath": "dist/app-santa-clara",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+           ],
             "polyfills": [
               "zone.js"
             ],
@@ -27,7 +30,8 @@
             "styles": [
               "src/styles.css",
               "src/bootstrap.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/sweetalert2/src/sweetalert2.scss"
             ],
             "scripts": [
               "src/bootstrap.bundle.min.js",
@@ -94,7 +98,8 @@
             "styles": [
               "src/styles.css",
               "src/bootstrap.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/sweetalert2/src/sweetalert2.scss"
             ],
             "scripts": [
               "src/bootstrap.bundle.min.js",

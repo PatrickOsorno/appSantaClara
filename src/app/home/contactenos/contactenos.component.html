@@ -1,0 +1,217 @@
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <h3 class="text-center mt-5 mb-5 text-white">Cont&aacute;ctenos</h3>
+  </div>
+</div>
+
+<div class="row d-flex align-items-center justify-content-center">
+  <div class="bg-light pt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <h4 class="mb-3">Acueducto Santa Clara</h4>
+          <address>
+            <p class="text-start">
+              <i class="fa-solid fa-house"></i> Asociaci&oacute;n Acueducto
+              Santa Clara
+            </p>
+            <p class="text-start">
+              <i class="fa-solid fa-earth-americas"></i> Ciudad Quesada,
+              Alajuela, Costa Rica
+            </p>
+            <p class="text-start">
+              <i class="fa-solid fa-envelope"></i> asoadm2012@hotmail.com
+            </p>
+            <p class="text-start">
+              <i class="fa-solid fa-phone"></i> +506 2475-6400
+            </p>
+          </address>
+          <h4 class="mb-3 mt-3">Redes Sociales</h4>
+          <address>
+            <p class="text-start">
+              <i class="fa-brands fa-facebook"></i> Acueducto Santa Clara
+            </p>
+            <p class="text-start">
+              <i class="fa-brands fa-whatsapp"></i> +506 2475-6400
+            </p>
+          </address>
+        </div>
+        <div class="col-lg-8 col-md-12">
+          <h4 class="mb-3 text-center">Formulario de Contacto</h4>
+          <form
+            [formGroup]="formularioContacto"
+            (ngSubmit)="enviarFormulario()"
+            novalidate
+          >
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="mb-3 col-lg-8 col-md-12 form-group">
+                <input
+                  [ngClass]="
+                    enviado &&
+                    formularioContacto.controls['nombreCompleto'].errors
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                  placeholder="Nombre Completo"
+                  formControlName="nombreCompleto"
+                />
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['nombreCompleto'].hasError(
+                      'required'
+                    )
+                  "
+                  class="invalid-feedback"
+                  >El campo Nombre Completo es requerido</span
+                >
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['nombreCompleto'].hasError(
+                      'pattern'
+                    )
+                  "
+                  class="invalid-feedback"
+                  >El nombre solo debe contener letras</span
+                >
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="mb-3 col-lg-8 col-md-12 form-group">
+                <input
+                  [ngClass]="
+                    enviado && formularioContacto.controls['correo'].errors
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                  placeholder="Correo"
+                  formControlName="correo"
+                />
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['correo'].hasError('required')
+                  "
+                  class="invalid-feedback"
+                  >El campo Correo es requerido</span
+                >
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['correo'].hasError('email')
+                  "
+                  class="invalid-feedback"
+                  >El Correo ingresado no tiene el formato correcto</span
+                >
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="mb-3 col-lg-8 col-md-12 form-group">
+                <input
+                  [ngClass]="
+                    enviado && formularioContacto.controls['numeroPaja'].errors
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                  placeholder="Número de Paja"
+                  formControlName="numeroPaja"
+                />
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['numeroPaja'].hasError(
+                      'required'
+                    )
+                  "
+                  class="invalid-feedback"
+                  >El campo Numero de Paja es requerido</span
+                >
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['numeroPaja'].hasError(
+                      'pattern'
+                    )
+                  "
+                  class="invalid-feedback"
+                  >El Numero de Paja solo debe contener n&uacute;meros</span
+                >
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="mb-3 col-lg-8 col-md-12 form-group">
+                <input
+                  [ngClass]="
+                    enviado && formularioContacto.controls['telefono'].errors
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                  placeholder="Teléfono"
+                  formControlName="telefono"
+                />
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['telefono'].hasError('required')
+                  "
+                  class="invalid-feedback"
+                  >El campo Tel&eacute;fono es requerido</span
+                >
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['telefono'].hasError('pattern')
+                  "
+                  class="invalid-feedback"
+                  >El Tel&eacute;fono ingresado no tiene el formato correcto
+                  (ej: 1234-5678)</span
+                >
+              </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="mb-3 col-lg-8 col-md-12 form-group">
+                <textarea
+                  [ngClass]="
+                    enviado && formularioContacto.controls['asunto'].errors
+                      ? 'form-control is-invalid'
+                      : 'form-control'
+                  "
+                  rows="4"
+                  placeholder="Asunto"
+                  formControlName="asunto"
+                ></textarea>
+                <span
+                  *ngIf="
+                    enviado &&
+                    formularioContacto.controls['asunto'].hasError('required')
+                  "
+                  class="invalid-feedback"
+                  >El campo Asunto es requerido</span
+                >
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center mb-3">
+              <div>
+                <button
+                  type="submit"
+                  [ngClass]="
+                    enviando ? 'btn btn-primary disabled' : 'btn btn-primary'
+                  "
+                >
+                  <i class="fa-solid fa-paper-plane"></i> {{ btnTxt }}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <iframe class="col-12 p-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.8026702117622!2d-84.51622748588652!3d10.357657469617287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa06e7af47365ab%3A0x581a8e2db1d28c18!2sOficina%20del%20ASADA%2C%20Santa%20Clara!5e0!3m2!1ses!2scr!4v1679879468560!5m2!1ses!2scr" height="500" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
