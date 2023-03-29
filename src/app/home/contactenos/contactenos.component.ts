@@ -23,7 +23,7 @@ export class ContactenosComponent implements OnInit {
   }
 
   formularioReactivo() {
-    this.enviado=false;
+    this.enviado = false;
     this.formularioContacto = this.fb.group({
       nombreCompleto: [
         '',
@@ -70,11 +70,22 @@ export class ContactenosComponent implements OnInit {
 
     this.eService.enviarFormulario(this.formularioContacto.value)
       .pipe(takeUntil(this.destroy$))
-      .subscribe(() => {
-        Swal.fire('Éxito', 'Formulario enviado, gracias por contactarnos!','success');
+      .subscribe(({ sucess }) => {
+        sucess ? Swal.mixin({
+          customClass: {
+            confirmButton: 'btn btn-primary',
+          },
+          buttonsStyling: false
+        }).fire('Éxito', 'Formulario enviado, gracias por contactarnos!', 'success') :
+          Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-primary',
+            },
+            buttonsStyling: false
+          }).fire('Error', 'Ha ocurrido un problema al enviar el formulario, por favor intentelo más tarde', 'error');
         this.enviando = false;
         this.btnTxt = " Enviar"
-        this.formularioReactivo(); 
+        this.formularioReactivo();
       })
   }
 }
