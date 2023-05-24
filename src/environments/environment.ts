@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL:'https://email-api-g1y0.onrender.com/email/send'
+  apiURL:'https://email-api-omega.vercel.app/email/send/santaClara'
 };
 
 /*

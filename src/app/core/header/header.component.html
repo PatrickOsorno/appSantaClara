@@ -1,5 +1,11 @@
 <nav class="navbar bg-primary navbar-expand-lg text-white">
   <div class="container-fluid">
+    <a
+      class="navbar-brand text-white"
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      >Acueducto Santa Clara</a
+    >
     <button
       class="navbar-toggler text-white"
       type="button"
@@ -33,8 +39,8 @@
           >
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" [routerLink]="['/formularios']"
-                > <i class="fa-regular fa-paste"></i> Formularios</a
+              <a class="dropdown-item" [routerLink]="['/formularios']">
+                <i class="fa-regular fa-paste"></i> Formularios</a
               >
             </li>
           </ul>
@@ -50,9 +56,9 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="https://acueductoscr.com/Recibos"
-                >
-                <i class="fa-solid fa-money-check-dollar"></i> Consulta de Recibos</a
+              <a class="dropdown-item" href="https://acueductoscr.com/Recibos">
+                <i class="fa-solid fa-money-check-dollar"></i> Consulta de
+                Recibos</a
               >
             </li>
           </ul>
